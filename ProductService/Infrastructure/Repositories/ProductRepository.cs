@@ -2,6 +2,7 @@
 using Domain.EntitiesM;
 using Domain.Interfaces;
 using Infrastructure.DbConnect;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -41,9 +42,16 @@ namespace Infrastructure.Repositories
             return await _mongoContext.Products.Find(_ => true).ToListAsync();
         }
 
-        public Task<ProductM?> GetByIdAsync(string id)
+        public async Task<ProductM?> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            return await _mongoContext.Products
+                   .Find(p => p.BusinessId == id)
+                   .FirstOrDefaultAsync();
+        }
+
+        public async Task<Product?> GetByIdSQLAsync(string id)
+        {
+            return await _context.Products.SingleOrDefaultAsync(o => o.ProductId == id);
         }
 
         public async Task<Product> UpdateRepository(Product data)

@@ -13,6 +13,8 @@ namespace Domain.EntitiesM
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        [BsonElement("businessId")]
+        public string BusinessId { get; set; } 
 
         [BsonElement("productName")]
         public string ProductName { get; set; }

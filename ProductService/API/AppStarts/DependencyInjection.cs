@@ -36,9 +36,12 @@ namespace API.AppStarts
             // Handler
             services.AddScoped<GetAllProductHandler>();
             services.AddScoped<CreateProductHandler>();
+            services.AddScoped<UpdateProductHandler>();
+            services.AddScoped<DeleteProductHandler>();
 
             //rabbitmq
             services.AddScoped<ProductCreatedConsumer>();
+            services.AddScoped<ProductDeletedConsumer>();
             services.AddHostedService<RabbitMQListener>();
             //connection RBMQ
             services.AddSingleton<RabbitMQConnectionManager>();

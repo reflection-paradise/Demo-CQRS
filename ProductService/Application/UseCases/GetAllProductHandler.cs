@@ -21,5 +21,10 @@ namespace Application.UseCases
             var products = await _product.GetAllAsync();
             return products;
         }
+        public async Task<ProductM> GetProductByIdM(string id)
+        {
+            var products = await _product.GetByIdAsync(id);
+            return products;
+        }
     }
 }

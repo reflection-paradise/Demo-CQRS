@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Application.Command
 {
-    internal class UpdateProductDTO
+    public class UpdateProductDTO
     {
+        public string ProductName { get; set; } = null!;
+
+        public int CategoryId { get; set; }
+
+        public decimal Price { get; set; }
     }
 }

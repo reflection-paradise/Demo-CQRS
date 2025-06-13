@@ -15,5 +15,6 @@ namespace Application.Command
         public int CategoryId { get; set; }
 
         public decimal Price { get; set; }
+
     }
 }

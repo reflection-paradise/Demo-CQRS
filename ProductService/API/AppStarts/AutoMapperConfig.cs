@@ -11,6 +11,7 @@ namespace API.AppStarts
         public AutoMapperConfig()
         {
             CreateMap<Product, CreateProductDTO>().ReverseMap();
+            CreateMap<Product, UpdateProductDTO>().ReverseMap();
         }
     }
 }       

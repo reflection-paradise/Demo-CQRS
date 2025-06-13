@@ -12,6 +12,7 @@ namespace Domain.Interfaces
     {
         Task<List<ProductM>> GetAllAsync();
         Task<ProductM?> GetByIdAsync(string id);
+        Task<Product?> GetByIdSQLAsync(string id);
 
         Task<Product> CreateRepository(Product data);
         Task<Product> UpdateRepository(Product data);

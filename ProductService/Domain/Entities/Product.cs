@@ -15,6 +15,8 @@ public partial class Product
 
     public DateTime? CreatedAt { get; set; }
 
+    public string? BusinessId { get; set; }
+
     public virtual Category Category { get; set; } = null!;
 
     public virtual ICollection<ProductDetail> ProductDetails { get; set; } = new List<ProductDetail>();

@@ -37,7 +37,7 @@ public partial class EcommerceDbContext : DbContext
             entity.ToTable("Category");
 
             entity.Property(e => e.CategoryId).ValueGeneratedNever();
-            entity.Property(e => e.CategoryName).HasMaxLength(100);
+            entity.Property(e => e.CategoryName).HasColumnType("text");
         });
 
         modelBuilder.Entity<Product>(entity =>
@@ -47,6 +47,7 @@ public partial class EcommerceDbContext : DbContext
             entity.ToTable("Product");
 
             entity.Property(e => e.ProductId).HasMaxLength(150);
+            entity.Property(e => e.BusinessId).HasMaxLength(50);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
